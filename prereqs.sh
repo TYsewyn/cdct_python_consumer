@@ -9,13 +9,13 @@ if [ "$(uname)" == "Darwin" ]; then
     else
       sdk install springboot
       spring --version
-      spring install org.springframework.cloud:spring-cloud-cli:2.2.2.RELEASE
+      spring install org.springframework.cloud:spring-cloud-cli:2.2.1.RELEASE
     fi
   else
     brew tap pivotal/tap
     brew install springboot
     spring --version
-    spring install org.springframework.cloud:spring-cloud-cli:2.2.2.RELEASE
+    spring install org.springframework.cloud:spring-cloud-cli:2.2.1.RELEASE
   fi
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     echo "GNU/Linux platform detected"
