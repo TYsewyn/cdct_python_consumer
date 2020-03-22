@@ -1,0 +1,8 @@
+server.port: 8080
+stubrunner:
+  ids:
+    - group:application:+:8000
+  repositoryRoot: git://https://github.com/TYsewyn/cdct_python_contracts.git
+  generate-stubs: true
+  consumer-name: consumer1
+  stubs-mode: LOCAL
