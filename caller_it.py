@@ -10,4 +10,4 @@ class IntegrationTest(TestCase):
 
     def test_make_request(self):
         response = self.caller.make_request()
-        self.assertEqual(response, 'Hello, World!', 'wrong response')
+        self.assertEqual(response, '{"message":"Hello, World!"}', 'wrong response')

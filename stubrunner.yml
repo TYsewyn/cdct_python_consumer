@@ -1,8 +1,22 @@
-server.port: 8080
+spring:
+  rabbitmq.virtualHost: /
+  cloud.stream:
+    bindings:
+      output: # sentTo value in the contract
+        group: ${spring.application.name} # Make it a durable exchange
+        destination: output # The exchange name
+        binder: rabbit # Which messaging system
+    rabbit:
+      bindings:
+        output: # sentTo value in the contract
+          producer:
+            exchangeType: headers # Type of exchange: direct, fanout, topic
+
 stubrunner:
   ids:
     - group:application:+:8000
   repositoryRoot: git://https://github.com/TYsewyn/cdct_python_contracts.git
   generate-stubs: true
   consumer-name: consumer1
-  stubs-mode: LOCAL
+  stubs-mode: REMOTE
+  stubs-per-consumer: true
